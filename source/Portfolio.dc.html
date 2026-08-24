@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body { margin:0; background:#FFFFFF; -webkit-font-smoothing:antialiased; }
+  a { color:#111111; text-decoration:none; }
+  a:hover { color:#6E6E6E; }
+</style>
+</helmet>
+
+<div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; color:#111111; background:#FFFFFF; min-height:100vh; display:flex; flex-direction:column">
+
+  <div style="border-bottom:1px solid #E6E6E6">
+    <div style="max-width:1440px; margin:0 auto; padding:0 48px; height:68px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:24px">
+      <div style="font-size:19px; font-weight:700; letter-spacing:-0.02em">a<span style="color:{{ accent }}">v</span>ery lastname</div>
+      <div style="display:flex; gap:36px; font-size:15px">
+        <a href="#work">Work</a>
+        <a href="#writing">Writing</a>
+        <a href="#about">About</a>
+      </div>
+      <div style="display:flex; gap:28px; justify-content:flex-end; font-size:15px; align-items:center">
+        <a href="#contact" style="display:flex; gap:9px; align-items:center"><span style="width:14px; height:14px; border:1.5px solid #111111; border-radius:2px; flex:none"></span>Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="flex:1; display:flex; align-items:center">
+    <div style="max-width:1440px; width:100%; margin:0 auto; padding:128px 48px 96px; box-sizing:border-box">
+      <div style="display:grid; grid-template-columns:120px minmax(0, 900px); gap:48px; align-items:start">
+
+        <div style="display:flex; flex-direction:column; gap:10px; padding-top:12px">
+          <div style="font-size:12px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Avery Lastname</div>
+          <div style="font-size:12px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Data Scientist</div>
+          <div style="height:1px; background:#E6E6E6; margin-top:6px"></div>
+          <div style="font-size:12px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Berlin · 2026</div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:56px">
+          <div style="font-size:64px; line-height:1.06; font-weight:700; letter-spacing:-0.022em; text-wrap:pretty">I build the models<span style="font-weight:400; color:#8A8A8A"> that decide </span>what a company<span style="font-weight:400; color:#8A8A8A"> does next.</span></div>
+
+          <div style="display:flex; flex-direction:column; gap:16px">
+            <div style="font-size:12px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Working in</div>
+            <div style="display:flex; flex-wrap:wrap; gap:10px">
+              <div style="font-size:13px; padding:8px 18px; border-radius:999px; border:1px solid #E6E6E6">Python</div>
+              <div style="font-size:13px; padding:8px 18px; border-radius:999px; border:1px solid #E6E6E6">SQL</div>
+              <div style="font-size:13px; padding:8px 18px; border-radius:999px; border:1px solid #E6E6E6">PyTorch</div>
+              <div style="font-size:13px; padding:8px 18px; border-radius:999px; border:1px solid #E6E6E6">Scikit-learn</div>
+              <div style="font-size:13px; padding:8px 18px; border-radius:999px; border:1px solid #E6E6E6">dbt</div>
+              <div style="font-size:13px; padding:8px 18px; border-radius:999px; border:1px solid #E6E6E6">Snowflake</div>
+              <div style="font-size:13px; padding:8px 18px; border-radius:999px; border:1px solid #E6E6E6">Tableau</div>
+              <div style="font-size:13px; padding:8px 18px; border-radius:999px; border:1px solid #E6E6E6">Airflow</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div style="max-width:1440px; width:100%; margin:0 auto; padding:0 48px 40px; box-sizing:border-box">
+    <div style="height:1px; background:#E6E6E6"></div>
+    <div style="padding-top:20px; display:flex; justify-content:space-between; align-items:baseline; gap:24px">
+      <div style="font-size:12px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Selected work below</div>
+      <div style="font-size:13px; color:#B4B4B4">↓</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;useAccent&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Brand&quot;},&quot;accentPrimary&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#EF9A2E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#EF9A2E&quot;,&quot;#111111&quot;,&quot;#3B5BDB&quot;,&quot;#0F766E&quot;],&quot;section&quot;:&quot;Brand&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return { accent: this.props.useAccent === false ? '#111111' : (this.props.accentPrimary ?? '#EF9A2E') };
+  }
+}
+</script>
+</body>
+</html>

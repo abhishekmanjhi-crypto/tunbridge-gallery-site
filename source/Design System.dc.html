@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  body { margin:0; background:#FFFFFF; -webkit-font-smoothing:antialiased; }
+  a { color:#111111; text-decoration:underline; text-underline-offset:3px; }
+  a:hover { color:#6E6E6E; }
+</style>
+</helmet>
+
+<div style="font-family:'Helvetica Neue', Helvetica, Arial, sans-serif; color:#111111; background:#FFFFFF; min-height:100vh; padding:0 0 160px">
+
+  <div style="max-width:1180px; margin:0 auto; padding:0 48px">
+
+    <!-- masthead -->
+    <div style="padding:120px 0 96px; display:flex; flex-direction:column; gap:28px">
+      <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Design system · v1.0 · Extracted reference</div>
+      <div>
+        <div style="font-size:72px; line-height:1.04; font-weight:700; letter-spacing:-0.022em; text-wrap:pretty">Quiet Editorial</div>
+        <div style="font-size:72px; line-height:1.04; font-weight:400; letter-spacing:-0.022em; color:#8A8A8A; text-wrap:pretty">A gallery-grade foundation</div>
+      </div>
+      <div style="font-size:20px; line-height:1.6; color:#4A4A4A; max-width:660px; text-wrap:pretty">Reverse-engineered from tunbridgegallery.com.au. Rules only — no page templates, no borrowed content. Everything here is subject-agnostic and ready to carry a different domain.</div>
+    </div>
+
+    <!-- 01 COLOR -->
+    <div style="border-top:1px solid #E6E6E6; padding:72px 0 0; display:flex; flex-direction:column; gap:44px">
+      <div style="display:flex; gap:48px; align-items:baseline; flex-wrap:wrap">
+        <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A; width:120px; flex:none">01 / Color</div>
+        <div style="flex:1; min-width:320px">
+          <div style="font-size:34px; font-weight:600; letter-spacing:-0.015em; margin-bottom:12px">A near-monochrome palette</div>
+          <div style="font-size:19px; line-height:1.6; color:#6E6E6E; max-width:620px; text-wrap:pretty">Four neutrals do 98% of the work. Color is an event, not a surface — it appears in the wordmark and in status, nowhere else. No gradients, no tinted panels, no colored buttons.</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:14px">
+        <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Neutrals — core</div>
+        <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:20px">
+          <div style="display:flex; flex-direction:column; gap:12px">
+            <div style="height:120px; background:#FFFFFF; border:1px solid #E6E6E6; border-radius:6px"></div>
+            <div style="display:flex; flex-direction:column; gap:3px">
+              <div style="font-size:17px; font-weight:500">Canvas</div>
+              <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">#FFFFFF</div>
+              <div style="font-size:15px; line-height:1.45; color:#8A8A8A">Page background. Always pure white — never off-white.</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px">
+            <div style="height:120px; background:#F5F5F5; border-radius:6px"></div>
+            <div style="display:flex; flex-direction:column; gap:3px">
+              <div style="font-size:17px; font-weight:500">Surface</div>
+              <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">#F5F5F5</div>
+              <div style="font-size:15px; line-height:1.45; color:#8A8A8A">Media wells, inert blocks, back-to-top chip.</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px">
+            <div style="height:120px; background:#E6E6E6; border-radius:6px"></div>
+            <div style="display:flex; flex-direction:column; gap:3px">
+              <div style="font-size:17px; font-weight:500">Hairline</div>
+              <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">#E6E6E6</div>
+              <div style="font-size:15px; line-height:1.45; color:#8A8A8A">1px rules and secondary-button borders. Only divider allowed.</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px">
+            <div style="height:120px; background:#8A8A8A; border-radius:6px"></div>
+            <div style="display:flex; flex-direction:column; gap:3px">
+              <div style="font-size:17px; font-weight:500">Muted</div>
+              <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">#8A8A8A</div>
+              <div style="font-size:15px; line-height:1.45; color:#8A8A8A">Sub-headlines, meta, micro-labels. The system's second voice.</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:12px">
+            <div style="height:120px; background:#111111; border-radius:6px"></div>
+            <div style="display:flex; flex-direction:column; gap:3px">
+              <div style="font-size:17px; font-weight:500">Ink</div>
+              <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">#111111</div>
+              <div style="font-size:15px; line-height:1.45; color:#8A8A8A">All primary text and the primary button fill.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:14px">
+        <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Neutrals — support</div>
+        <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:20px">
+          <div style="display:flex; flex-direction:column; gap:10px">
+            <div style="height:64px; background:#4A4A4A; border-radius:6px"></div>
+            <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">#4A4A4A · body-strong</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px">
+            <div style="height:64px; background:#6E6E6E; border-radius:6px"></div>
+            <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">#6E6E6E · body-muted</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px">
+            <div style="height:64px; background:#B4B4B4; border-radius:6px"></div>
+            <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">#B4B4B4 · disabled</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px">
+            <div style="height:64px; background:#FAFAFA; border:1px solid #E6E6E6; border-radius:6px"></div>
+            <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">#FAFAFA · surface-soft</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px">
+            <div style="height:64px; background:#1A1A1A; border-radius:6px"></div>
+            <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">#1A1A1A · ink-hover</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px; padding-top:16px">
+        <div style="display:flex; flex-direction:column; gap:14px">
+          <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Accent — wordmark only</div>
+          <div style="display:flex; gap:16px">
+            <div style="flex:1; display:flex; flex-direction:column; gap:10px">
+              <div style="height:64px; background:{{ accentA }}; border-radius:6px"></div>
+              <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">{{ accentAHex }}</div>
+            </div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:10px">
+              <div style="height:64px; background:{{ accentB }}; border-radius:6px"></div>
+              <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">{{ accentBHex }}</div>
+            </div>
+          </div>
+          <div style="font-size:17px; line-height:1.6; color:#6E6E6E; text-wrap:pretty">Used exactly once on the reference site: two letterforms inside the logotype. It never touches a button, link, heading, or border. <b style="font-weight:600; color:#111111">Because its only load-bearing use is the mark, the accent pair is fully swappable — or droppable</b> without disturbing any other rule in this system. Treat it as brand signature, not UI color.</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:14px">
+          <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Semantic — status</div>
+          <div style="display:flex; gap:16px">
+            <div style="flex:1; display:flex; flex-direction:column; gap:10px">
+              <div style="height:64px; background:{{ alert }}; border-radius:6px"></div>
+              <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">{{ alertHex }}</div>
+            </div>
+            <div style="flex:1; display:flex; flex-direction:column; gap:10px; justify-content:center">
+              <div style="font-size:17px; display:flex; gap:10px; align-items:baseline">
+                <span style="color:#8A8A8A; text-decoration:line-through">Superseded</span>
+                <span style="color:{{ alert }}; font-size:15px">Status</span>
+              </div>
+            </div>
+          </div>
+          <div style="font-size:17px; line-height:1.6; color:#6E6E6E; text-wrap:pretty">One red, at caption size only, paired with a struck-through neutral value. Never a badge, pill, or filled chip — the status is a word, not a decoration. This is the whole semantic layer; there is no success/warning/info set to inherit.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 TYPE -->
+    <div style="border-top:1px solid #E6E6E6; margin-top:96px; padding:72px 0 0; display:flex; flex-direction:column; gap:44px">
+      <div style="display:flex; gap:48px; align-items:baseline; flex-wrap:wrap">
+        <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A; width:120px; flex:none">02 / Type</div>
+        <div style="flex:1; min-width:320px">
+          <div style="font-size:34px; font-weight:600; letter-spacing:-0.015em; margin-bottom:12px">One grotesk, two weights, two colors</div>
+          <div style="font-size:19px; line-height:1.6; color:#6E6E6E; max-width:620px; text-wrap:pretty">A single neo-grotesk carries everything. Hierarchy is built from <b style="font-weight:600; color:#111111">weight and color</b> far more than from size — the signature move is a bold ink line with a same-size muted line under it.</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:8px; padding:32px 0; border-top:1px solid #E6E6E6; border-bottom:1px solid #E6E6E6">
+        <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Family</div>
+        <div style="font-size:44px; font-weight:500; letter-spacing:-0.02em">Helvetica Neue · Helvetica · Arial</div>
+        <div style="font-size:17px; line-height:1.6; color:#6E6E6E; max-width:680px; text-wrap:pretty">Tight apertures, level terminals, no personality tics. Substitute any true neo-grotesk (Helvetica Now, Söhne, Inter Display at tight tracking) — never a geometric or humanist sans, which breaks the tone immediately. Weights in play: 400, 500, 600, 700. Optical tracking is negative on everything above 24px.</div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:0">
+        <div style="display:grid; grid-template-columns:180px 1fr 260px; gap:32px; padding:26px 0; border-bottom:1px solid #E6E6E6; align-items:baseline">
+          <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">display / 72</div>
+          <div style="font-size:72px; line-height:1.04; font-weight:700; letter-spacing:-0.022em">Hero statement</div>
+          <div style="font-size:15px; line-height:1.5; color:#8A8A8A">700 · -0.022em · 1.04 · ink. Centered, one per page, max two lines.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:180px 1fr 260px; gap:32px; padding:26px 0; border-bottom:1px solid #E6E6E6; align-items:baseline">
+          <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">display-muted / 72</div>
+          <div style="font-size:72px; line-height:1.04; font-weight:400; letter-spacing:-0.022em; color:#8A8A8A">Same size, softer</div>
+          <div style="font-size:15px; line-height:1.5; color:#8A8A8A">400 · muted. Sits directly under the display line at identical size — the defining pairing.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:180px 1fr 260px; gap:32px; padding:26px 0; border-bottom:1px solid #E6E6E6; align-items:baseline">
+          <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">section / 34</div>
+          <div style="font-size:34px; font-weight:600; letter-spacing:-0.015em">Section heading</div>
+          <div style="font-size:15px; line-height:1.5; color:#8A8A8A">600 · -0.015em. Left-aligned, action pinned right on the same baseline, hairline beneath.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:180px 1fr 260px; gap:32px; padding:26px 0; border-bottom:1px solid #E6E6E6; align-items:baseline">
+          <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">subsection / 25</div>
+          <div style="font-size:25px; font-weight:600; letter-spacing:-0.01em">Subsection heading</div>
+          <div style="font-size:15px; line-height:1.5; color:#8A8A8A">600. Feature blocks and detail panes.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:180px 1fr 260px; gap:32px; padding:26px 0; border-bottom:1px solid #E6E6E6; align-items:baseline">
+          <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">lede / 20</div>
+          <div style="font-size:20px; line-height:1.6; color:#4A4A4A">An introductory paragraph, set one step up from body and one step down in weight.</div>
+          <div style="font-size:15px; line-height:1.5; color:#8A8A8A">400 · 1.6 · body-strong. Max 660px measure.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:180px 1fr 260px; gap:32px; padding:26px 0; border-bottom:1px solid #E6E6E6; align-items:baseline">
+          <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">body / 19</div>
+          <div style="font-size:19px; line-height:1.65; color:#4A4A4A">Default running text. Line height stays generous at 1.65 so dense text still reads as calm rather than packed.</div>
+          <div style="font-size:15px; line-height:1.5; color:#8A8A8A">400 · 1.65. Measure 62–78 characters.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:180px 1fr 260px; gap:32px; padding:26px 0; border-bottom:1px solid #E6E6E6; align-items:baseline">
+          <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">card-title / 27</div>
+          <div style="font-size:27px; font-weight:600; letter-spacing:-0.015em">Card or list-item title</div>
+          <div style="font-size:15px; line-height:1.5; color:#8A8A8A">600 · ink. Card and list titles read as headings, not labels.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:180px 1fr 260px; gap:32px; padding:26px 0; border-bottom:1px solid #E6E6E6; align-items:baseline">
+          <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">meta / 17</div>
+          <div style="font-size:17px; color:#8A8A8A">Secondary attribute line</div>
+          <div style="font-size:15px; line-height:1.5; color:#8A8A8A">400 · muted. Sits between title and detail line inside cards.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:180px 1fr 260px; gap:32px; padding:26px 0; border-bottom:1px solid #E6E6E6; align-items:baseline">
+          <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">caption / 15</div>
+          <div style="font-size:15px; color:#8A8A8A">Fine print, timestamps, qualifiers</div>
+          <div style="font-size:15px; line-height:1.5; color:#8A8A8A">400 · muted.</div>
+        </div>
+        <div style="display:grid; grid-template-columns:180px 1fr 260px; gap:32px; padding:26px 0; border-bottom:1px solid #E6E6E6; align-items:baseline">
+          <div style="font-size:15px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">micro / 14</div>
+          <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Micro-label · eyebrow · nav</div>
+          <div style="font-size:15px; line-height:1.5; color:#8A8A8A">500 · uppercase · +0.14em. The system's only tracked-out style; use it for orientation, never for content.</div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px">
+        <div style="border:1px solid #E6E6E6; border-radius:8px; padding:28px; display:flex; flex-direction:column; gap:14px">
+          <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Do</div>
+          <div style="font-size:17px; line-height:1.65; color:#4A4A4A; text-wrap:pretty">Alternate ink and muted <i>within</i> a long statement to give a paragraph rhythm without adding color, size, or rules. Sentence case everywhere except micro-labels. Numerals and units live in the muted role.</div>
+        </div>
+        <div style="border:1px solid #E6E6E6; border-radius:8px; padding:28px; display:flex; flex-direction:column; gap:14px">
+          <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Don't</div>
+          <div style="font-size:17px; line-height:1.65; color:#4A4A4A; text-wrap:pretty">No italics for emphasis, no all-caps headings, no letter-spacing on anything above 15px, no third typeface, no colored text outside the semantic red.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 SPACE -->
+    <div style="border-top:1px solid #E6E6E6; margin-top:96px; padding:72px 0 0; display:flex; flex-direction:column; gap:44px">
+      <div style="display:flex; gap:48px; align-items:baseline; flex-wrap:wrap">
+        <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A; width:120px; flex:none">03 / Space</div>
+        <div style="flex:1; min-width:320px">
+          <div style="font-size:34px; font-weight:600; letter-spacing:-0.015em; margin-bottom:12px">Whitespace is the layout</div>
+          <div style="font-size:19px; line-height:1.6; color:#6E6E6E; max-width:620px; text-wrap:pretty">An 8px base scale, a 12-column grid, and section gaps large enough that hairlines are almost redundant. When in doubt the answer is more space, not more structure.</div>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:14px">
+        <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Scale — base 8</div>
+        <div style="display:flex; align-items:flex-end; gap:14px; flex-wrap:wrap">
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center"><div style="width:44px; height:4px; background:#111111"></div><div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">4</div></div>
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center"><div style="width:44px; height:8px; background:#111111"></div><div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">8</div></div>
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center"><div style="width:44px; height:12px; background:#111111"></div><div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">12</div></div>
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center"><div style="width:44px; height:16px; background:#111111"></div><div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">16</div></div>
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center"><div style="width:44px; height:24px; background:#111111"></div><div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">24</div></div>
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center"><div style="width:44px; height:32px; background:#111111"></div><div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">32</div></div>
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center"><div style="width:44px; height:48px; background:#111111"></div><div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">48</div></div>
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center"><div style="width:44px; height:72px; background:#111111"></div><div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">72</div></div>
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center"><div style="width:44px; height:96px; background:#111111"></div><div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">96</div></div>
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center"><div style="width:44px; height:128px; background:#111111"></div><div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">128</div></div>
+          <div style="display:flex; flex-direction:column; gap:8px; align-items:center"><div style="width:44px; height:160px; background:#111111"></div><div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#8A8A8A">160</div></div>
+        </div>
+      </div>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:56px">
+        <div style="display:flex; flex-direction:column; gap:18px">
+          <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Container &amp; grid</div>
+          <div style="display:flex; flex-direction:column; gap:0">
+            <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid #E6E6E6; font-size:17px"><span style="color:#6E6E6E">Max content width</span><span style="font-family:ui-monospace, Menlo, monospace; font-size:15px">1440px</span></div>
+            <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid #E6E6E6; font-size:17px"><span style="color:#6E6E6E">Text measure max</span><span style="font-family:ui-monospace, Menlo, monospace; font-size:15px">660px</span></div>
+            <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid #E6E6E6; font-size:17px"><span style="color:#6E6E6E">Gutter · desktop / mobile</span><span style="font-family:ui-monospace, Menlo, monospace; font-size:15px">48 / 24</span></div>
+            <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid #E6E6E6; font-size:17px"><span style="color:#6E6E6E">Columns · desktop / tablet / mobile</span><span style="font-family:ui-monospace, Menlo, monospace; font-size:15px">12 / 8 / 4</span></div>
+            <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid #E6E6E6; font-size:17px"><span style="color:#6E6E6E">Card grid tracks</span><span style="font-family:ui-monospace, Menlo, monospace; font-size:15px">2 / 2 / 1</span></div>
+            <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid #E6E6E6; font-size:17px"><span style="color:#6E6E6E">Grid gap · column / row</span><span style="font-family:ui-monospace, Menlo, monospace; font-size:15px">48 / 96</span></div>
+            <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid #E6E6E6; font-size:17px"><span style="color:#6E6E6E">Section gap</span><span style="font-family:ui-monospace, Menlo, monospace; font-size:15px">96–160</span></div>
+            <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid #E6E6E6; font-size:17px"><span style="color:#6E6E6E">Heading → hairline → content</span><span style="font-family:ui-monospace, Menlo, monospace; font-size:15px">24 / 40</span></div>
+            <div style="display:flex; justify-content:space-between; gap:16px; padding:13px 0; border-bottom:1px solid #E6E6E6; font-size:17px"><span style="color:#6E6E6E">Breakpoints</span><span style="font-family:ui-monospace, Menlo, monospace; font-size:15px">640 / 1024 / 1440</span></div>
+          </div>
+          <div style="font-size:17px; line-height:1.6; color:#6E6E6E; text-wrap:pretty">Row gap is more than double the column gap — that vertical looseness is what reads as "gallery" rather than "catalogue".</div>
+        </div>
+
+        <div style="display:flex; flex-direction:column; gap:18px">
+          <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Rhythm — a section, diagrammed</div>
+          <div style="border:1px solid #E6E6E6; border-radius:8px; padding:32px; display:flex; flex-direction:column; gap:0">
+            <div style="height:1px; background:#E6E6E6"></div>
+            <div style="padding:24px 0 0; font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#B4B4B4">↑ hairline opens the section · pt 72</div>
+            <div style="display:flex; justify-content:space-between; align-items:center; gap:20px; padding:28px 0 24px">
+              <div style="font-size:24px; font-weight:600; letter-spacing:-0.015em">Section heading</div>
+              <div style="display:flex; gap:10px">
+                <div style="background:#111111; color:#FFFFFF; font-size:16px; padding:9px 18px; border-radius:999px">Primary</div>
+                <div style="background:#FFFFFF; color:#111111; font-size:16px; padding:9px 18px; border-radius:999px; border:1px solid #E6E6E6">Toggle</div>
+              </div>
+            </div>
+            <div style="height:1px; background:#E6E6E6"></div>
+            <div style="padding:40px 0 0; display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px">
+              <div style="height:80px; background:#F5F5F5; border-radius:6px"></div>
+              <div style="height:80px; background:#F5F5F5; border-radius:6px"></div>
+              <div style="height:80px; background:#F5F5F5; border-radius:6px"></div>
+            </div>
+            <div style="padding:20px 0 0; font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#B4B4B4">↑ content starts 40 below the rule</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 COMPONENTS -->
+    <div style="border-top:1px solid #E6E6E6; margin-top:96px; padding:72px 0 0; display:flex; flex-direction:column; gap:56px">
+      <div style="display:flex; gap:48px; align-items:baseline; flex-wrap:wrap">
+        <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A; width:120px; flex:none">04 / Parts</div>
+        <div style="flex:1; min-width:320px">
+          <div style="font-size:34px; font-weight:600; letter-spacing:-0.015em; margin-bottom:12px">Five components, no more</div>
+          <div style="font-size:19px; line-height:1.6; color:#6E6E6E; max-width:620px; text-wrap:pretty">The reference site ships a deliberately small kit. Nothing has a shadow. Nothing has a fill except the primary button and the surface well. Radii are binary: pill for controls, 6–8px for blocks.</div>
+        </div>
+      </div>
+
+      <!-- buttons -->
+      <div style="display:flex; flex-direction:column; gap:20px">
+        <div style="font-size:25px; font-weight:600; letter-spacing:-0.01em">Button — pill</div>
+        <div style="display:flex; gap:14px; align-items:center; flex-wrap:wrap">
+          <div style="background:#111111; color:#FFFFFF; font-size:17px; font-weight:400; padding:14px 30px; border-radius:999px; cursor:pointer" style-hover="background:#1A1A1A">Primary</div>
+          <div style="background:#FFFFFF; color:#111111; font-size:17px; padding:14px 30px; border-radius:999px; border:1px solid #E6E6E6; cursor:pointer" style-hover="border-color:#111111">Secondary</div>
+          <div style="background:#FFFFFF; color:#B4B4B4; font-size:17px; padding:14px 30px; border-radius:999px; border:1px solid #F0F0F0">Disabled</div>
+          <div style="background:#111111; color:#FFFFFF; font-size:15px; padding:10px 22px; border-radius:999px">Tag</div>
+          <div style="color:#111111; font-size:17px; text-decoration:underline; text-underline-offset:3px; cursor:pointer">Text link action</div>
+        </div>
+        <div style="display:flex; gap:0; align-items:center; width:fit-content; border-radius:999px">
+          <div style="background:#111111; color:#FFFFFF; font-size:17px; padding:14px 30px; border-radius:999px">Selected</div>
+          <div style="background:#FFFFFF; color:#111111; font-size:17px; padding:14px 30px; border-radius:999px; border:1px solid #E6E6E6; margin-left:10px">Unselected</div>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(4, 1fr); gap:20px; font-size:16px; line-height:1.55; color:#6E6E6E">
+          <div><b style="color:#111111; font-weight:500">Geometry</b><br />Radius 999px. Action 17px / padding 14×30; tag 15px / padding 10×22. Border 1px, no shadow ever.</div>
+          <div><b style="color:#111111; font-weight:500">Pairing</b><br />Primary + secondary sit side by side with 10–14px gap; the pair also serves as a two-state toggle.</div>
+          <div><b style="color:#111111; font-weight:500">States</b><br />Hover: ink→ink-hover, or border hairline→ink. Focus: 2px ink outline, 2px offset.</div>
+          <div><b style="color:#111111; font-weight:500">Restraint</b><br />One primary per section. Never a colored, ghost-on-image, or icon-only pill.</div>
+        </div>
+      </div>
+
+      <!-- card -->
+      <div style="display:flex; flex-direction:column; gap:20px">
+        <div style="font-size:25px; font-weight:600; letter-spacing:-0.01em">Content card — generic</div>
+        <div style="font-size:19px; line-height:1.65; color:#4A4A4A; max-width:660px; text-wrap:pretty">A borderless, shadowless stack: an optional media well, then a fixed three-line text block — <b style="font-weight:500; color:#111111">title (500/ink) · meta (muted) · detail (ink)</b> — with an optional icon action floated to the title's right. The container is invisible; the text block is the component. Media is optional and can be dropped entirely for text-led domains, in which case the card becomes an indented list row.</div>
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px 32px">
+          <div style="display:flex; flex-direction:column; gap:16px">
+            <div style="aspect-ratio:1/1; background:repeating-linear-gradient(135deg, #F0F0F0 0 8px, #F7F7F7 8px 16px); border-radius:6px; display:flex; align-items:center; justify-content:center">
+              <div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#9A9A9A; letter-spacing:0.04em">media well 1:1</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:6px">
+              <div style="display:flex; justify-content:space-between; align-items:baseline; gap:12px">
+                <div style="font-size:27px; font-weight:600; letter-spacing:-0.015em">Card title</div>
+                <div style="width:16px; height:16px; border:1.5px solid #D8D8D8; border-radius:3px; flex:none"></div>
+              </div>
+              <div style="font-size:17px; color:#8A8A8A">Meta attribute line</div>
+              <div style="font-size:17px; color:#111111">Detail line</div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:16px">
+            <div style="aspect-ratio:1/1; background:repeating-linear-gradient(135deg, #F0F0F0 0 8px, #F7F7F7 8px 16px); border-radius:6px; display:flex; align-items:center; justify-content:center">
+              <div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#9A9A9A; letter-spacing:0.04em">media well 1:1</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:6px">
+              <div style="font-size:27px; font-weight:600; letter-spacing:-0.015em">With status</div>
+              <div style="font-size:17px; color:#8A8A8A">Meta attribute line</div>
+              <div style="font-size:17px; display:flex; gap:8px; align-items:baseline">
+                <span style="color:#8A8A8A; text-decoration:line-through">Detail</span>
+                <span style="color:{{ alert }}; font-size:15px">Status</span>
+              </div>
+            </div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:16px">
+            <div style="aspect-ratio:1/1; border:1px dashed #E6E6E6; border-radius:6px; display:flex; align-items:center; justify-content:center; padding:24px">
+              <div style="font-size:15px; line-height:1.5; font-family:ui-monospace, Menlo, monospace; color:#B4B4B4; text-align:center">media omitted —<br />text-led variant</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:6px">
+              <div style="font-size:27px; font-weight:600; letter-spacing:-0.015em">Text-only card</div>
+              <div style="font-size:17px; color:#8A8A8A">Meta attribute line</div>
+              <div style="font-size:17px; line-height:1.6; color:#4A4A4A">Body may replace the detail line when the card must carry substance rather than a value.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- feature row -->
+      <div style="display:flex; flex-direction:column; gap:20px">
+        <div style="font-size:25px; font-weight:600; letter-spacing:-0.01em">Feature row — 50/50</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center">
+          <div style="aspect-ratio:4/3; background:repeating-linear-gradient(135deg, #F0F0F0 0 8px, #F7F7F7 8px 16px); border-radius:6px; display:flex; align-items:center; justify-content:center">
+            <div style="font-size:14px; font-family:ui-monospace, Menlo, monospace; color:#9A9A9A; letter-spacing:0.04em">feature media 4:3</div>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:20px">
+            <div style="font-size:34px; font-weight:600; letter-spacing:-0.015em">Feature heading</div>
+            <div style="display:flex; flex-direction:column; gap:8px">
+              <div style="display:flex; gap:12px; align-items:center; font-size:17px; color:#8A8A8A"><div style="width:14px; height:14px; border:1.5px solid #C8C8C8; border-radius:2px; flex:none"></div>Attribute one</div>
+              <div style="display:flex; gap:12px; align-items:center; font-size:17px; color:#8A8A8A"><div style="width:14px; height:14px; border:1.5px solid #C8C8C8; border-radius:2px; flex:none"></div>Attribute two</div>
+            </div>
+            <div style="font-size:19px; line-height:1.65; color:#6E6E6E; text-wrap:pretty">A three-line summary, truncated with an ellipsis rather than a "read more" affordance — the whole block is the link.</div>
+            <div style="display:flex; gap:12px">
+              <div style="background:#111111; color:#FFFFFF; font-size:17px; padding:14px 30px; border-radius:999px">Primary</div>
+              <div style="background:#FFFFFF; color:#111111; font-size:17px; padding:14px 30px; border-radius:999px; border:1px solid #E6E6E6">Secondary</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- nav -->
+      <div style="display:flex; flex-direction:column; gap:20px">
+        <div style="font-size:25px; font-weight:600; letter-spacing:-0.01em">Navigation bar</div>
+        <div style="border:1px solid #E6E6E6; border-radius:8px; overflow:hidden">
+          <div style="display:grid; grid-template-columns:1fr auto 1fr; align-items:center; gap:24px; padding:20px 28px; border-bottom:1px solid #E6E6E6">
+            <div style="font-size:21px; font-weight:700; letter-spacing:-0.02em">word<span style="color:{{ accentA }}">m</span>ark</div>
+            <div style="display:flex; gap:36px; font-size:17px; color:#111111">
+              <div>Section</div>
+              <div>Section</div>
+              <div>Section</div>
+            </div>
+            <div style="display:flex; gap:28px; justify-content:flex-end; font-size:17px; color:#111111; align-items:center">
+              <div style="display:flex; gap:9px; align-items:center"><div style="width:14px; height:14px; border:1.5px solid #111111; border-radius:999px; flex:none"></div>Action</div>
+              <div style="display:flex; gap:9px; align-items:center"><div style="width:14px; height:14px; border:1.5px solid #111111; border-radius:2px; flex:none"></div>Action</div>
+            </div>
+          </div>
+          <div style="padding:16px 28px; font-size:16px; line-height:1.55; color:#8A8A8A">Height 68px · single hairline beneath · sticky, white, never translucent or shadowed. Logo left, 3–4 text links centered, 1–2 icon+label actions right. No search field, no CTA button, no dropdown chrome beyond a small chevron.</div>
+        </div>
+      </div>
+
+      <!-- footer -->
+      <div style="display:flex; flex-direction:column; gap:20px">
+        <div style="font-size:25px; font-weight:600; letter-spacing:-0.01em">Footer</div>
+        <div style="border:1px solid #E6E6E6; border-radius:8px; overflow:hidden">
+          <div style="padding:44px 28px; border-bottom:1px solid #E6E6E6">
+            <div style="font-size:29px; line-height:1.35; letter-spacing:-0.015em; max-width:760px; text-wrap:pretty"><span style="color:#8A8A8A">A standing statement set at </span><span style="font-weight:500">display-adjacent size</span><span style="color:#8A8A8A">, alternating ink and muted across the sentence — </span><span style="font-weight:500">the one place</span><span style="color:#8A8A8A"> the system raises its voice.</span></div>
+          </div>
+          <div style="padding:40px 28px; border-bottom:1px solid #E6E6E6; display:grid; grid-template-columns:repeat(4, 1fr); gap:32px">
+            <div style="display:flex; flex-direction:column; gap:10px">
+              <div style="font-size:19px; font-weight:500">Group heading</div>
+              <div style="font-size:17px; line-height:1.65; color:#8A8A8A">Address line one<br />Address line two<br />Region and code</div>
+              <div style="font-size:17px; text-decoration:underline; text-underline-offset:3px">Contact link</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:10px">
+              <div style="font-size:19px; font-weight:500">Group heading</div>
+              <div style="font-size:17px; line-height:1.65; color:#8A8A8A">Hours or detail<br />Second detail</div>
+              <div style="font-size:17px; text-decoration:underline; text-underline-offset:3px">Contact link</div>
+            </div>
+            <div style="display:flex; flex-direction:column; gap:9px; font-size:17px">
+              <div style="text-decoration:underline; text-underline-offset:3px">Link</div>
+              <div style="text-decoration:underline; text-underline-offset:3px">Link</div>
+              <div style="text-decoration:underline; text-underline-offset:3px">Link</div>
+              <div style="text-decoration:underline; text-underline-offset:3px">Link</div>
+            </div>
+            <div style="display:flex; justify-content:flex-end; align-items:flex-start">
+              <div style="width:36px; height:36px; background:#F5F5F5; border-radius:6px; display:flex; align-items:center; justify-content:center; font-size:15px; color:#6E6E6E">↑</div>
+            </div>
+          </div>
+          <div style="padding:24px 28px; display:flex; gap:32px; font-size:16px; color:#6E6E6E">
+            <div>© Year, Organisation</div>
+            <div style="text-decoration:underline; text-underline-offset:3px; color:#8A8A8A">Credit line</div>
+          </div>
+        </div>
+        <div style="font-size:17px; line-height:1.6; color:#6E6E6E; max-width:660px; text-wrap:pretty">Three link groups maximum, every link underlined by default, back-to-top as a small surface-filled square in the corner. Fine print sits alone below a hairline at caption size.</div>
+      </div>
+    </div>
+
+    <!-- 05 PSYCHOLOGY -->
+    <div style="border-top:1px solid #E6E6E6; margin-top:96px; padding:72px 0 0; display:flex; flex-direction:column; gap:44px">
+      <div style="display:flex; gap:48px; align-items:baseline; flex-wrap:wrap">
+        <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A; width:120px; flex:none">05 / Tone</div>
+        <div style="flex:1; min-width:320px">
+          <div style="font-size:34px; font-weight:600; letter-spacing:-0.015em; margin-bottom:12px">Why it feels trustworthy</div>
+          <div style="font-size:19px; line-height:1.6; color:#6E6E6E; max-width:620px; text-wrap:pretty">The aesthetic argument is <i>we don't need to sell you</i>. Preserve that when the subject changes; it survives any content, and it is the only part of this system that can't be re-specified as a token.</div>
+        </div>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:32px 40px">
+        <div style="display:flex; flex-direction:column; gap:10px; padding-top:24px; border-top:1px solid #E6E6E6">
+          <div style="font-size:19px; font-weight:600">Restraint as credibility</div>
+          <div style="font-size:17px; line-height:1.65; color:#6E6E6E; text-wrap:pretty">Nothing is decorated, so nothing looks like it's compensating. The absence of persuasion mechanics reads as confidence.</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; padding-top:24px; border-top:1px solid #E6E6E6">
+          <div style="font-size:19px; font-weight:600">Content gets the room</div>
+          <div style="font-size:17px; line-height:1.65; color:#6E6E6E; text-wrap:pretty">Generous margins frame the subject the way a wall frames a work. Density is a choice made per-section, never globally.</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; padding-top:24px; border-top:1px solid #E6E6E6">
+          <div style="font-size:19px; font-weight:600">Editorial, not commercial</div>
+          <div style="font-size:17px; line-height:1.65; color:#6E6E6E; text-wrap:pretty">Sentence case, plain nouns, no exclamation, no urgency. Labels describe; they don't recruit.</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; padding-top:24px; border-top:1px solid #E6E6E6">
+          <div style="font-size:19px; font-weight:600">Hierarchy without noise</div>
+          <div style="font-size:17px; line-height:1.65; color:#6E6E6E; text-wrap:pretty">Weight and gray do the work that color, boxes, and shadows do elsewhere. Fewer signals, each one legible.</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; padding-top:24px; border-top:1px solid #E6E6E6">
+          <div style="font-size:19px; font-weight:600">Repetition over novelty</div>
+          <div style="font-size:17px; line-height:1.65; color:#6E6E6E; text-wrap:pretty">One card, one button pair, one divider, reused everywhere. Familiarity within a page is the point.</div>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:10px; padding-top:24px; border-top:1px solid #E6E6E6">
+          <div style="font-size:19px; font-weight:600">Quiet motion</div>
+          <div style="font-size:17px; line-height:1.65; color:#6E6E6E; text-wrap:pretty">140–200ms color and opacity transitions only. No parallax, reveal-on-scroll, or transform easing.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- portability note -->
+    <div style="border-top:1px solid #E6E6E6; margin-top:96px; padding:72px 0 0; display:grid; grid-template-columns:1fr 1fr; gap:56px">
+      <div style="display:flex; flex-direction:column; gap:16px">
+        <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">Portability</div>
+        <div style="font-size:25px; font-weight:600; letter-spacing:-0.01em">What travels, and what doesn't</div>
+        <div style="font-size:19px; line-height:1.65; color:#4A4A4A; text-wrap:pretty">Everything above is subject-neutral. Three things in the reference are domain artifacts and should not be carried into a new context: the media-first card ratio, the commerce-shaped detail line, and the favorite/status affordances. Swap the media well for a text block, the detail line for a date or role, and drop the icon action — the grid, type scale, and tone are untouched.</div>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:16px">
+        <div style="font-size:14px; font-weight:500; letter-spacing:0.14em; text-transform:uppercase; color:#8A8A8A">If the subject is text-led</div>
+        <div style="font-size:19px; line-height:1.65; color:#4A4A4A; text-wrap:pretty">Body sits at 19–20px and card titles at 27px; tighten row gap from 96 to 64, and let the section heading + hairline pattern carry structure that images carried before. Add one component only: a definition row (label left in micro, value right in body) for dense factual lists. Nothing else needs to change.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;useAccents&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Accent policy&quot;},&quot;accentPrimary&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#EF9A2E&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#EF9A2E&quot;,&quot;#111111&quot;,&quot;#3B5BDB&quot;,&quot;#C2410C&quot;],&quot;section&quot;:&quot;Accent policy&quot;},&quot;accentSecondary&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#4FA8C0&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#4FA8C0&quot;,&quot;#8A8A8A&quot;,&quot;#7048E8&quot;,&quot;#0F766E&quot;],&quot;section&quot;:&quot;Accent policy&quot;},&quot;alertColor&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#E2261B&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#E2261B&quot;,&quot;#B42318&quot;,&quot;#111111&quot;],&quot;section&quot;:&quot;Semantic&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    const accents = p.useAccents === false;
+    const accentA = accents ? '#8A8A8A' : (p.accentPrimary ?? '#EF9A2E');
+    const accentB = accents ? '#B4B4B4' : (p.accentSecondary ?? '#4FA8C0');
+    const alert = p.alertColor ?? '#E2261B';
+    return {
+      accentA, accentB, alert,
+      accentAHex: accentA.toUpperCase(),
+      accentBHex: accentB.toUpperCase(),
+      alertHex: alert.toUpperCase()
+    };
+  }
+}
+</script>
+</body>
+</html>

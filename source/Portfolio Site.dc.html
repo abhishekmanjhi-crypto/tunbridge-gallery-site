@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
+  :root {
+    --font-display:'Space Grotesk', sans-serif; --font-body:'IBM Plex Sans', sans-serif; --font-mono:'IBM Plex Mono', monospace;
+    --bg:#EDEDEA; --card:#FFFFFF; --soft:#F6F6F4; --ink:#111214; --body:#4E5157; --muted:#6B6F75;
+    --line:#E2E2DD; --accent:#2B4BF2; --on-accent:#FFFFFF; --panel:#111214; --panel-ink:#F3F3F0;
+    --dot:#CFCFC9; --dot-light:rgba(255,255,255,0.5);
+  }
+  html[data-theme="dark"] {
+    --bg:#0A0B0D; --card:#141619; --soft:#1A1D21; --ink:#F3F3F0; --body:#A7ABB2; --muted:#8A8E96;
+    --line:#22252A; --accent:#4E68FF; --on-accent:#FFFFFF; --panel:#F3F3F0; --panel-ink:#111214;
+    --dot:#2A2D33; --dot-light:rgba(255,255,255,0.45);
+  }
+  body { margin:0; background:var(--bg); -webkit-font-smoothing:antialiased; transition:background 400ms ease; }
+  a { color:var(--ink); text-decoration:none; transition:color 160ms ease; }
+  a:hover { color:var(--accent); }
+  .om-logo-dark, .om-logo-light { display:block; }
+  html[data-theme="dark"] .om-logo-dark { display:none !important; }
+  html:not([data-theme="dark"]) .om-logo-light { display:none !important; }
+  @keyframes om-rise { from { opacity:0; transform:translateY(10px); } to { opacity:1; transform:none; } }
+</style>
+<script src="./image-slot.js"></script>
+</helmet>
+
+<div style="font-family:var(--font-body); color:var(--ink); min-height:100vh; display:flex; flex-direction:column">
+
+  <div style="position:sticky; top:0; z-index:20; padding:16px 20px 10px; display:flex; justify-content:center">
+    <div style="display:flex; align-items:center; gap:6px; background:var(--card); border:1px solid var(--line); border-radius:999px; padding:7px 8px 7px 18px; box-shadow:0 8px 28px rgba(17,18,20,0.07)">
+      <div onClick="{{ goWork }}" style="cursor:pointer; display:flex; align-items:center; padding-right:6px">
+        <img src="./assets/logo-black.png" alt="prathamesh" class="om-logo-dark" style="height:32px; width:auto; margin:-6px 0">
+        <img src="./assets/logo-white.png" alt="prathamesh" class="om-logo-light" style="height:32px; width:auto; margin:-6px 0">
+      </div>
+      <div onClick="{{ goWork }}" style="font-size:13px; padding:8px 15px; border-radius:999px; cursor:pointer; background:{{ workPill }}; color:{{ workColor }}; transition:background 180ms ease, color 180ms ease">Work</div>
+      <div onClick="{{ goAbout }}" style="font-size:13px; padding:8px 15px; border-radius:999px; cursor:pointer; background:{{ aboutPill }}; color:{{ aboutColor }}; transition:background 180ms ease, color 180ms ease">About</div>
+      <div onClick="{{ goContact }}" style="font-size:13px; padding:8px 15px; border-radius:999px; cursor:pointer; background:{{ contactPill }}; color:{{ contactColor }}; transition:background 180ms ease, color 180ms ease">Contact</div>
+      <a href="{{ resumeUrl }}" download="" style="font-size:13px; font-weight:500; padding:9px 17px; border-radius:999px; background:var(--accent); color:var(--on-accent); display:flex; align-items:center; gap:7px; transition:opacity 160ms ease" style-hover="opacity:0.87; color:var(--on-accent)">Résumé <span style="font-family:var(--font-mono); font-size:12px">↓</span></a>
+      <div onClick="{{ toggleTheme }}" style="width:34px; height:34px; border-radius:999px; border:1px solid var(--line); display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:13px; color:var(--muted); transition:border-color 160ms ease, color 160ms ease" style-hover="border-color:var(--accent); color:var(--accent)">{{ themeGlyph }}</div>
+    </div>
+  </div>
+
+  <!-- ============ WORK ============ -->
+  <sc-if value="{{ isWork }}" hint-placeholder-val="{{ true }}">
+  <div style="flex:1; max-width:1240px; width:100%; margin:0 auto; padding:14px 20px 36px; box-sizing:border-box">
+    <div style="border:1px solid var(--line); border-radius:26px; overflow:hidden; background:var(--line); display:grid; grid-template-columns:repeat(12, 1fr); gap:1px; animation:om-rise 520ms cubic-bezier(.2,.7,.3,1) both">
+
+      <div style="grid-column:span 8; background:var(--card); padding:46px 46px 40px; display:flex; flex-direction:column; gap:24px">
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:9px 13px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted)">
+          <span style="color:var(--ink)">Prathamesh Kadam</span><span style="color:var(--accent)">•</span><span>Data Scientist</span><span style="color:var(--accent)">•</span><span>Galway, Ireland</span>
+        </div>
+        <div style="font-family:var(--font-display); font-size:46px; line-height:1.08; font-weight:600; letter-spacing:-0.028em; text-wrap:pretty">I build the models<span style="color:var(--muted)"> that </span><span style="color:var(--accent)">decide</span><span style="color:var(--muted)"> what a company does next.</span></div>
+        <div style="font-size:16px; line-height:1.65; color:var(--body); max-width:540px; text-wrap:pretty">Eight years of churn models, forecasts and pricing work — mostly for teams who need one clear number to act on, not a dashboard of forty.</div>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; gap:8px 11px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; color:var(--muted); padding-top:2px">
+          <span>Python</span><span style="color:var(--line)">/</span><span>SQL</span><span style="color:var(--line)">/</span><span>PyTorch</span><span style="color:var(--line)">/</span><span>Scikit-learn</span><span style="color:var(--line)">/</span><span>dbt</span><span style="color:var(--line)">/</span><span>Snowflake</span><span style="color:var(--line)">/</span><span>Tableau</span><span style="color:var(--line)">/</span><span>Airflow</span>
+        </div>
+      </div>
+
+      <div style="grid-column:span 4; background:var(--card); padding:16px; display:flex; flex-direction:column; gap:10px">
+        <image-slot id="portrait" style="width:100%; flex:1; min-height:250px" shape="rounded" radius="14" placeholder="Portrait"></image-slot>
+        <div style="display:flex; justify-content:space-between; align-items:baseline; padding:0 6px 2px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.06em; color:var(--muted)">
+          <span>Galway, IE</span><span>53.27°N</span>
+        </div>
+      </div>
+
+      <div style="grid-column:span 4; background:var(--accent); color:var(--on-accent); padding:32px; display:flex; flex-direction:column; justify-content:space-between; gap:26px; min-height:168px; background-image:radial-gradient(var(--dot-light) 1.1px, transparent 1.1px); background-size:15px 15px; background-position:right -5px bottom -5px">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; opacity:0.82">Experience</div>
+        <div>
+          <div style="font-family:var(--font-display); font-size:50px; font-weight:600; line-height:1; letter-spacing:-0.03em">8 yrs</div>
+          <div style="font-size:14px; line-height:1.5; opacity:0.88; padding-top:8px; max-width:210px">Models in production across subscription, retail and support data.</div>
+        </div>
+      </div>
+
+      <div style="grid-column:span 4; background:var(--panel); color:var(--panel-ink); padding:32px; display:flex; flex-direction:column; justify-content:space-between; gap:24px">
+        <div style="display:flex; align-items:center; gap:9px">
+          <span style="width:7px; height:7px; border-radius:999px; background:#4ADE80; flex:none"></span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Open to work</span>
+        </div>
+        <div style="font-family:var(--font-mono); font-size:26px; letter-spacing:-0.01em">{{ clock }}</div>
+        <div style="font-size:14px; line-height:1.5; opacity:0.68">Replies in a day or two. Contract or full-time, remote or Galway.</div>
+      </div>
+
+      <div onClick="{{ goContact }}" style="grid-column:span 4; background:var(--soft); padding:32px; display:flex; flex-direction:column; justify-content:space-between; gap:24px; cursor:pointer; transition:background 200ms ease" style-hover="background:var(--card)">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted)">Selected work</div>
+        <div style="font-family:var(--font-display); font-size:20px; font-weight:600; letter-spacing:-0.018em; line-height:1.3">Six projects, each with the tradeoff written down. <span style="color:var(--accent)">↓</span></div>
+      </div>
+
+      <sc-for list="{{ projects }}" as="p" hint-placeholder-count="6">
+        <div onClick="{{ p.open }}" style="grid-column:span 6; background:var(--card); padding:22px 22px 28px; display:flex; flex-direction:column; gap:16px; cursor:pointer; transition:background 200ms ease" style-hover="background:var(--soft)">
+          <div style="display:flex; align-items:center; gap:12px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase">
+            <span style="color:var(--accent)">{{ p.index }}</span>
+            <span style="color:var(--muted)">{{ p.kind }}</span>
+            <div style="flex:1"></div>
+            <span style="color:var(--muted)">{{ p.year }}</span>
+          </div>
+          <div style="width:100%; aspect-ratio:16/9; border-radius:14px; background-color:var(--bg); background-image:radial-gradient(var(--dot) 1.2px, transparent 1.2px); background-size:14px 14px; display:flex; align-items:flex-end; padding:16px; box-sizing:border-box">
+            <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; color:var(--muted)">{{ p.figure }}</span>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:10px; padding:0 2px">
+            <div style="font-family:var(--font-display); font-size:20px; font-weight:600; letter-spacing:-0.018em; line-height:1.3; text-wrap:pretty">{{ p.title }}</div>
+            <div style="font-size:14px; line-height:1.6; color:var(--body); text-wrap:pretty">{{ p.summary }}</div>
+            <div style="display:flex; flex-wrap:wrap; gap:6px; padding-top:6px">
+              <sc-for list="{{ p.tags }}" as="t" hint-placeholder-count="3">
+                <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.06em; text-transform:uppercase; padding:6px 11px; border-radius:999px; background:var(--bg); color:var(--muted)">{{ t }}</div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </sc-for>
+
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ============ PROJECT DETAIL ============ -->
+  <sc-if value="{{ isProject }}">
+  <div style="flex:1; max-width:1240px; width:100%; margin:0 auto; padding:14px 20px 36px; box-sizing:border-box">
+    <div style="border:1px solid var(--line); border-radius:26px; overflow:hidden; background:var(--line); display:grid; grid-template-columns:repeat(12, 1fr); gap:1px; animation:om-rise 520ms cubic-bezier(.2,.7,.3,1) both">
+
+      <div style="grid-column:span 12; background:var(--card); padding:42px 46px; display:flex; flex-direction:column; align-items:center; gap:20px; text-align:center">
+        <div onClick="{{ goWork }}" style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); cursor:pointer; transition:color 160ms ease" style-hover="color:var(--accent)">← All work</div>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; align-items:center; gap:9px 13px; font-family:var(--font-mono); font-size:11px; letter-spacing:0.1em; text-transform:uppercase; color:var(--muted)">
+          <span style="color:var(--ink)">{{ current.kind }}</span><span style="color:var(--accent)">•</span><span>{{ current.year }}</span><span style="color:var(--accent)">•</span><span>Sole contributor</span>
+        </div>
+        <div style="font-family:var(--font-display); font-size:38px; line-height:1.14; font-weight:600; letter-spacing:-0.026em; max-width:820px; text-wrap:pretty">{{ current.title }}</div>
+        <div style="font-size:16px; line-height:1.65; color:var(--body); max-width:620px; text-wrap:pretty">{{ current.summary }}</div>
+        <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:6px; padding-top:2px">
+          <sc-for list="{{ current.tags }}" as="t" hint-placeholder-count="4">
+            <div style="font-family:var(--font-mono); font-size:10px; letter-spacing:0.06em; text-transform:uppercase; padding:6px 11px; border-radius:999px; background:var(--bg); color:var(--muted)">{{ t }}</div>
+          </sc-for>
+        </div>
+      </div>
+
+      <div style="grid-column:span 4; background:var(--accent); color:var(--on-accent); padding:30px 32px; display:flex; flex-direction:column; gap:8px">
+        <div style="font-family:var(--font-display); font-size:40px; font-weight:600; line-height:1; letter-spacing:-0.03em">78%</div>
+        <div style="font-size:14px; line-height:1.5; opacity:0.88">Precision at a two-week lead time</div>
+      </div>
+      <div style="grid-column:span 4; background:var(--card); padding:30px 32px; display:flex; flex-direction:column; gap:8px">
+        <div style="font-family:var(--font-display); font-size:40px; font-weight:600; line-height:1; letter-spacing:-0.03em">−14%</div>
+        <div style="font-size:14px; line-height:1.5; color:var(--muted)">Churn in the piloted segment</div>
+      </div>
+      <div style="grid-column:span 4; background:var(--panel); color:var(--panel-ink); padding:30px 32px; display:flex; flex-direction:column; gap:8px">
+        <div style="font-family:var(--font-display); font-size:40px; font-weight:600; line-height:1; letter-spacing:-0.03em">18 mo</div>
+        <div style="font-size:14px; line-height:1.5; opacity:0.68">Usage, billing and support history modelled</div>
+      </div>
+
+      <div style="grid-column:span 12; background:var(--card); padding:40px 46px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:26px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">01</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">The problem</span>
+        </div>
+        <div style="max-width:740px; display:flex; flex-direction:column; gap:18px">
+          <div style="font-family:var(--font-display); font-size:24px; line-height:1.4; font-weight:600; letter-spacing:-0.018em; text-wrap:pretty">The business was losing roughly 6% of subscribers a month,<span style="font-weight:500; color:var(--muted)"> and nobody knew who until they were already gone.</span></div>
+          <div style="font-size:15px; line-height:1.7; color:var(--body); text-wrap:pretty">The retention team had no way to see risk in advance. Outreach was reactive — usually a discount email sent after someone had already asked to cancel, at the point where the decision was made and the conversation was about saving face rather than changing course.</div>
+          <div style="font-size:15px; line-height:1.7; color:var(--body); text-wrap:pretty">The goal was narrow and testable: predict churn risk early enough that a retention offer could still plausibly work. Anything arriving after the cancellation request was, for this purpose, worthless.</div>
+        </div>
+      </div>
+
+      <div style="grid-column:span 7; background:var(--card); padding:40px 42px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:20px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">02</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">The approach</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0">
+          <div style="display:grid; grid-template-columns:26px 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--line)">
+            <div style="font-family:var(--font-mono); font-size:11px; color:var(--muted); padding-top:4px">01</div>
+            <div style="font-size:14px; line-height:1.65; color:var(--body); text-wrap:pretty">Pulled and cleaned 18 months of customer usage, billing and support-ticket data.</div>
+          </div>
+          <div style="display:grid; grid-template-columns:26px 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--line)">
+            <div style="font-family:var(--font-mono); font-size:11px; color:var(--muted); padding-top:4px">02</div>
+            <div style="font-size:14px; line-height:1.65; color:var(--body); text-wrap:pretty">Engineered behavioural features — login drop-off, ticket sentiment, plan downgrades, payment failures.</div>
+          </div>
+          <div style="display:grid; grid-template-columns:26px 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--line)">
+            <div style="font-family:var(--font-mono); font-size:11px; color:var(--muted); padding-top:4px">03</div>
+            <div style="font-size:14px; line-height:1.65; color:var(--body); text-wrap:pretty">Tested Logistic Regression, Random Forest and XGBoost; picked XGBoost on the precision–recall tradeoff.</div>
+          </div>
+          <div style="display:grid; grid-template-columns:26px 1fr; gap:16px; padding:14px 0; border-bottom:1px solid var(--line)">
+            <div style="font-family:var(--font-mono); font-size:11px; color:var(--muted); padding-top:4px">04</div>
+            <div style="font-size:14px; line-height:1.65; color:var(--body); text-wrap:pretty">Handled class imbalance with SMOTE and threshold tuning rather than the default 0.5 cutoff.</div>
+          </div>
+          <div style="display:grid; grid-template-columns:26px 1fr; gap:16px; padding:14px 0">
+            <div style="font-family:var(--font-mono); font-size:11px; color:var(--muted); padding-top:4px">05</div>
+            <div style="font-size:14px; line-height:1.65; color:var(--body); text-wrap:pretty">Validated on time-based splits, so no future data was ever used to predict the past.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="grid-column:span 5; background:var(--soft); padding:40px 36px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:16px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">T1</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Model comparison</span>
+        </div>
+        <table style="width:100%; border-collapse:collapse; font-size:13px">
+          <thead>
+            <tr style="border-bottom:1px solid var(--line)">
+              <th style="text-align:left; padding:9px 4px; font-family:var(--font-mono); font-size:10px; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">Model</th>
+              <th style="text-align:right; padding:9px 4px; font-family:var(--font-mono); font-size:10px; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">Prec</th>
+              <th style="text-align:right; padding:9px 4px; font-family:var(--font-mono); font-size:10px; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">Rec</th>
+              <th style="text-align:right; padding:9px 4px; font-family:var(--font-mono); font-size:10px; font-weight:400; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">AUC</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:12px 4px; color:var(--body)">Logistic Reg.</td><td style="padding:12px 4px; text-align:right; font-family:var(--font-mono); color:var(--body)">0.61</td><td style="padding:12px 4px; text-align:right; font-family:var(--font-mono); color:var(--body)">0.54</td><td style="padding:12px 4px; text-align:right; font-family:var(--font-mono); color:var(--body)">0.71</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:12px 4px; color:var(--body)">Random Forest</td><td style="padding:12px 4px; text-align:right; font-family:var(--font-mono); color:var(--body)">0.69</td><td style="padding:12px 4px; text-align:right; font-family:var(--font-mono); color:var(--body)">0.58</td><td style="padding:12px 4px; text-align:right; font-family:var(--font-mono); color:var(--body)">0.77</td></tr>
+            <tr><td style="padding:12px 4px; font-weight:600">XGBoost</td><td style="padding:12px 4px; text-align:right; font-family:var(--font-mono); font-weight:500; color:var(--accent)">0.78</td><td style="padding:12px 4px; text-align:right; font-family:var(--font-mono); font-weight:500">0.55</td><td style="padding:12px 4px; text-align:right; font-family:var(--font-mono); font-weight:500">0.83</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="grid-column:span 12; background:var(--card); padding:40px 46px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:24px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">F01</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Feature importance</span>
+        </div>
+        <div style="width:100%; aspect-ratio:16/6; border-radius:16px; background-color:var(--bg); background-image:radial-gradient(var(--dot) 1.2px, transparent 1.2px); background-size:16px 16px; display:flex; align-items:flex-end; padding:20px; box-sizing:border-box">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--muted); letter-spacing:0.04em">horizontal bar chart — top 8 churn drivers</span>
+        </div>
+        <div style="font-size:14px; line-height:1.6; color:var(--muted); max-width:620px; padding-top:16px; text-wrap:pretty">Login drop-off and payment failures dominate; demographic attributes contribute almost nothing, which is why they were dropped from the final model.</div>
+      </div>
+
+      <div style="grid-column:span 7; background:var(--card); padding:40px 42px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:22px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">03</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Key tradeoff</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:18px">
+          <div style="font-family:var(--font-display); font-size:24px; line-height:1.4; font-weight:600; letter-spacing:-0.018em; text-wrap:pretty">Precision over recall,<span style="font-weight:500; color:var(--muted)"> because the two kinds of mistake cost very different amounts.</span></div>
+          <div style="font-size:15px; line-height:1.7; color:var(--body); text-wrap:pretty">A false positive costs a discount email to someone who was never going to leave. A false negative costs an entire subscriber. That asymmetry sounds like an argument for recall — but the team had a fixed weekly capacity, and a list padded with low-risk accounts would push genuine risk off the bottom of it.</div>
+          <div style="font-size:15px; line-height:1.7; color:var(--body); text-wrap:pretty">So the threshold was tuned for a list the team could actually work through, where most names deserved to be there. Recall was allowed to fall.</div>
+        </div>
+      </div>
+
+      <div style="grid-column:span 5; background:var(--panel); color:var(--panel-ink); padding:40px 36px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid rgba(130,130,130,0.35); margin-bottom:16px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">T2</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Cost of a mistake</span>
+        </div>
+        <table style="width:100%; border-collapse:collapse; font-size:13px">
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(130,130,130,0.35)"><td style="padding:15px 0; opacity:0.62; width:46%">False positive</td><td style="padding:15px 0; text-align:right">One discount email</td></tr>
+            <tr style="border-bottom:1px solid rgba(130,130,130,0.35)"><td style="padding:15px 0; opacity:0.62">False negative</td><td style="padding:15px 0; text-align:right">One subscriber</td></tr>
+            <tr><td style="padding:15px 0; opacity:0.62">Binding constraint</td><td style="padding:15px 0; text-align:right">Weekly outreach capacity</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="grid-column:span 12; background:var(--card); padding:40px 46px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:24px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">F02</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Model performance</span>
+        </div>
+        <div style="width:100%; display:grid; grid-template-columns:1.5fr 1fr; gap:14px">
+          <div style="width:100%; aspect-ratio:16/9; border-radius:16px; background-color:var(--bg); background-image:radial-gradient(var(--dot) 1.2px, transparent 1.2px); background-size:16px 16px; display:flex; align-items:flex-end; padding:18px; box-sizing:border-box">
+            <span style="font-family:var(--font-mono); font-size:11px; color:var(--muted)">precision–recall curve</span>
+          </div>
+          <div style="width:100%; aspect-ratio:16/9; border-radius:16px; background-color:var(--bg); background-image:radial-gradient(var(--dot) 1.2px, transparent 1.2px); background-size:16px 16px; display:flex; align-items:flex-end; padding:18px; box-sizing:border-box">
+            <span style="font-family:var(--font-mono); font-size:11px; color:var(--muted)">confusion matrix</span>
+          </div>
+        </div>
+        <div style="font-size:14px; line-height:1.6; color:var(--muted); max-width:620px; padding-top:16px; text-wrap:pretty">Performance at the chosen threshold, with the default 0.5 cutoff shown for comparison.</div>
+      </div>
+
+      <div style="grid-column:span 12; background:var(--soft); padding:40px 46px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:6px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">04</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Results</span>
+        </div>
+        <table style="width:100%; border-collapse:collapse">
+          <tbody>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:20px 0; font-family:var(--font-display); font-size:22px; font-weight:600; letter-spacing:-0.02em; white-space:nowrap; width:120px">78%</td><td style="padding:20px 0; font-size:15px; line-height:1.6; color:var(--body)">Precision on flagged accounts, at a two-week lead time before the cancellation window.</td></tr>
+            <tr style="border-bottom:1px solid var(--line)"><td style="padding:20px 0; font-family:var(--font-display); font-size:22px; font-weight:600; letter-spacing:-0.02em; white-space:nowrap">−14%</td><td style="padding:20px 0; font-size:15px; line-height:1.6; color:var(--body)">Churn in the piloted segment over the trial period, where the team ran targeted outreach against the flagged list.</td></tr>
+            <tr><td style="padding:20px 0; font-family:var(--font-display); font-size:22px; font-weight:600; letter-spacing:-0.02em; white-space:nowrap">Weekly</td><td style="padding:20px 0; font-size:15px; line-height:1.6; color:var(--body)">A Tableau dashboard the team pulls the risk list from themselves, without asking anyone to write a query.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="grid-column:span 8; background:var(--card); padding:40px 46px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:22px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">05</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">What I'd do differently</span>
+        </div>
+        <div style="font-family:var(--font-display); font-size:22px; line-height:1.45; font-weight:500; letter-spacing:-0.018em; text-wrap:pretty"><span style="color:var(--muted)">The weekly batch pipeline sets the floor on lead time. </span>With more time I'd move the behavioural signals to real time<span style="color:var(--muted)"> — the model can see a login drop-off days before the batch job does, and those days are the whole product.</span></div>
+      </div>
+
+      <div style="grid-column:span 4; background:var(--card); padding:40px 36px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:22px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">F03</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Handoff</span>
+        </div>
+        <div style="width:100%; aspect-ratio:4/3; border-radius:16px; background-color:var(--bg); background-image:radial-gradient(var(--dot) 1.2px, transparent 1.2px); background-size:16px 16px; display:flex; align-items:flex-end; padding:18px; box-sizing:border-box">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--muted)">retention dashboard</span>
+        </div>
+        <div style="font-size:14px; line-height:1.6; color:var(--muted); padding-top:16px; text-wrap:pretty">Risk score, the two features driving it, and the account owner — nothing else.</div>
+      </div>
+
+      <div onClick="{{ goWork }}" style="grid-column:span 6; background:var(--card); padding:30px 34px; display:flex; flex-direction:column; gap:8px; cursor:pointer; transition:background 200ms ease" style-hover="background:var(--soft)">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted)">Index</div>
+        <div style="font-family:var(--font-display); font-size:18px; font-weight:600; letter-spacing:-0.015em">← All work</div>
+      </div>
+      <div onClick="{{ goNext }}" style="grid-column:span 6; background:var(--accent); color:var(--on-accent); padding:30px 34px; display:flex; flex-direction:column; align-items:flex-end; gap:8px; cursor:pointer; text-align:right; transition:opacity 200ms ease" style-hover="opacity:0.9">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; opacity:0.82">Next project</div>
+        <div style="font-family:var(--font-display); font-size:18px; font-weight:600; letter-spacing:-0.015em">{{ next.title }} →</div>
+      </div>
+
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ============ ABOUT ============ -->
+  <sc-if value="{{ isAbout }}">
+  <div style="flex:1; max-width:1240px; width:100%; margin:0 auto; padding:14px 20px 36px; box-sizing:border-box">
+    <div style="border:1px solid var(--line); border-radius:26px; overflow:hidden; background:var(--line); display:grid; grid-template-columns:repeat(12, 1fr); gap:1px; animation:om-rise 520ms cubic-bezier(.2,.7,.3,1) both">
+
+      <div style="grid-column:span 8; background:var(--card); padding:46px; display:flex; flex-direction:column; gap:22px">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted)">About</div>
+        <div style="font-family:var(--font-display); font-size:40px; line-height:1.12; font-weight:600; letter-spacing:-0.028em; text-wrap:pretty">Eight years<span style="color:var(--muted)"> of turning messy data into </span>decisions people trust.</div>
+        <div style="display:flex; flex-direction:column; gap:16px; max-width:600px">
+          <div style="font-size:15px; line-height:1.7; color:var(--body); text-wrap:pretty">Opening paragraph of placeholder narrative. Where the work started, what the first real dataset was, and the moment the field stopped being abstract.</div>
+          <div style="font-size:15px; line-height:1.7; color:var(--body); text-wrap:pretty">Second paragraph of placeholder narrative. The path since then, stated plainly. What kinds of problems keep showing up, and which ones are worth taking.</div>
+        </div>
+      </div>
+
+      <div style="grid-column:span 4; background:var(--panel); color:var(--panel-ink); padding:40px 34px; display:flex; flex-direction:column; justify-content:space-between; gap:26px">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Elsewhere</div>
+        <div style="display:flex; flex-direction:column; gap:0; font-size:13px">
+          <div style="display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid rgba(130,130,130,0.35)"><span style="opacity:0.6">Currently</span><span style="text-align:right">Placeholder co., Galway</span></div>
+          <div style="display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid rgba(130,130,130,0.35)"><span style="opacity:0.6">Previously</span><span style="text-align:right">Placeholder · Lab</span></div>
+          <div style="display:flex; justify-content:space-between; gap:16px; padding:12px 0; border-bottom:1px solid rgba(130,130,130,0.35)"><span style="opacity:0.6">Study</span><span style="text-align:right">MSc Placeholder</span></div>
+          <div style="display:flex; justify-content:space-between; gap:16px; padding:12px 0"><span style="opacity:0.6">Off hours</span><span style="text-align:right">Placeholder interest</span></div>
+        </div>
+      </div>
+
+      <div style="grid-column:span 4; background:var(--card); padding:36px 34px; display:flex; flex-direction:column; gap:10px">
+        <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.08em">01</div>
+        <div style="font-family:var(--font-display); font-size:18px; font-weight:600; letter-spacing:-0.015em">Simplest model that ships</div>
+        <div style="font-size:14px; line-height:1.65; color:var(--body); text-wrap:pretty">Bias toward the model that survives contact with production, not the one that wins a benchmark.</div>
+      </div>
+      <div style="grid-column:span 4; background:var(--card); padding:36px 34px; display:flex; flex-direction:column; gap:10px">
+        <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.08em">02</div>
+        <div style="font-family:var(--font-display); font-size:18px; font-weight:600; letter-spacing:-0.015em">Decision before code</div>
+        <div style="font-size:14px; line-height:1.65; color:var(--body); text-wrap:pretty">The tradeoff gets written down before anything gets built, so the threshold isn't a surprise later.</div>
+      </div>
+      <div style="grid-column:span 4; background:var(--card); padding:36px 34px; display:flex; flex-direction:column; gap:10px">
+        <div style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.08em">03</div>
+        <div style="font-family:var(--font-display); font-size:18px; font-weight:600; letter-spacing:-0.015em">Handoff is the deliverable</div>
+        <div style="font-size:14px; line-height:1.65; color:var(--body); text-wrap:pretty">A model nobody can act on is a research artefact — the interface matters as much as the score.</div>
+      </div>
+
+      <div style="grid-column:span 8; background:var(--soft); padding:36px 40px; display:flex; flex-direction:column; gap:14px">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted)">Toolkit</div>
+        <div style="display:flex; flex-wrap:wrap; gap:7px">
+          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; padding:8px 14px; border-radius:999px; background:var(--card); color:var(--body)">Python</div>
+          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; padding:8px 14px; border-radius:999px; background:var(--card); color:var(--body)">SQL</div>
+          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; padding:8px 14px; border-radius:999px; background:var(--card); color:var(--body)">PyTorch</div>
+          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; padding:8px 14px; border-radius:999px; background:var(--card); color:var(--body)">Scikit-learn</div>
+          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; padding:8px 14px; border-radius:999px; background:var(--card); color:var(--body)">dbt</div>
+          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; padding:8px 14px; border-radius:999px; background:var(--card); color:var(--body)">Snowflake</div>
+          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; padding:8px 14px; border-radius:999px; background:var(--card); color:var(--body)">Tableau</div>
+          <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.04em; padding:8px 14px; border-radius:999px; background:var(--card); color:var(--body)">Airflow</div>
+        </div>
+      </div>
+
+      <div onClick="{{ goContact }}" style="grid-column:span 4; background:var(--accent); color:var(--on-accent); padding:36px 34px; display:flex; flex-direction:column; justify-content:space-between; gap:20px; cursor:pointer; transition:opacity 200ms ease" style-hover="opacity:0.9">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; opacity:0.82">Get in touch</div>
+        <div style="font-family:var(--font-display); font-size:20px; font-weight:600; letter-spacing:-0.018em; line-height:1.3">Email is best. I answer within a day or two. →</div>
+      </div>
+
+    </div>
+  </div>
+  </sc-if>
+
+  <!-- ============ CONTACT ============ -->
+  <sc-if value="{{ isContact }}">
+  <div style="flex:1; max-width:1240px; width:100%; margin:0 auto; padding:14px 20px 36px; box-sizing:border-box">
+    <div style="border:1px solid var(--line); border-radius:26px; overflow:hidden; background:var(--line); display:grid; grid-template-columns:repeat(12, 1fr); gap:1px; animation:om-rise 520ms cubic-bezier(.2,.7,.3,1) both">
+
+      <div style="grid-column:span 8; background:var(--card); padding:46px; display:flex; flex-direction:column; gap:22px">
+        <div style="display:flex; align-items:center; gap:9px">
+          <span style="width:7px; height:7px; border-radius:999px; background:#4ADE80; flex:none"></span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted)">Open to work</span>
+        </div>
+        <div style="font-family:var(--font-display); font-size:40px; line-height:1.12; font-weight:600; letter-spacing:-0.028em; text-wrap:pretty">Email is best.<span style="color:var(--muted)"> I answer within a day or two.</span></div>
+        <div style="font-size:15px; line-height:1.7; color:var(--body); max-width:560px; text-wrap:pretty">A one-paragraph description of the problem is enough to start — no brief required.</div>
+      </div>
+
+      <div style="grid-column:span 4; background:var(--panel); color:var(--panel-ink); padding:40px 34px; display:flex; flex-direction:column; justify-content:space-between; gap:22px">
+        <div style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Local time</div>
+        <div style="font-family:var(--font-mono); font-size:32px; letter-spacing:-0.01em">{{ clock }}</div>
+        <div style="font-size:13px; line-height:1.5; opacity:0.65">Galway, Ireland · GMT/IST</div>
+      </div>
+
+      <div style="grid-column:span 7; background:var(--card); padding:40px 42px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:8px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">01</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Direct</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0">
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:20px; padding:16px 0; border-bottom:1px solid var(--line)"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">Email</span><a href="#email" style="font-size:15px">name@placeholder.com</a></div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:20px; padding:16px 0; border-bottom:1px solid var(--line)"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">LinkedIn</span><a href="#linkedin" style="font-size:15px">/in/placeholder</a></div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:20px; padding:16px 0; border-bottom:1px solid var(--line)"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">GitHub</span><a href="#github" style="font-size:15px">@placeholder</a></div>
+          <div style="display:flex; justify-content:space-between; align-items:baseline; gap:20px; padding:16px 0"><span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">Résumé</span><a href="{{ resumeUrl }}" download="" style="font-size:15px">PDF, one page ↓</a></div>
+        </div>
+      </div>
+
+      <div style="grid-column:span 5; background:var(--soft); padding:40px 36px">
+        <div style="display:flex; align-items:baseline; gap:14px; padding-bottom:14px; border-bottom:1px solid var(--line); margin-bottom:8px">
+          <span style="font-family:var(--font-mono); font-size:11px; color:var(--accent); letter-spacing:0.06em">02</span>
+          <span style="font-family:var(--font-mono); font-size:11px; letter-spacing:0.12em; text-transform:uppercase">Good fit</span>
+        </div>
+        <div style="display:flex; flex-direction:column; gap:0; font-size:13px">
+          <div style="display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-bottom:1px solid var(--line)"><span style="color:var(--muted)">Best for</span><span style="text-align:right">Modelling with a decision attached</span></div>
+          <div style="display:flex; justify-content:space-between; gap:16px; padding:14px 0; border-bottom:1px solid var(--line)"><span style="color:var(--muted)">Availability</span><span style="text-align:right">Select engagements, from Q4</span></div>
+          <div style="display:flex; justify-content:space-between; gap:16px; padding:14px 0"><span style="color:var(--muted)">Basis</span><span style="text-align:right">Contract or full-time</span></div>
+        </div>
+      </div>
+
+      <a href="#email" style="grid-column:span 12; background:var(--accent); color:var(--on-accent); padding:34px 42px; display:flex; align-items:center; justify-content:space-between; gap:20px; transition:opacity 200ms ease" style-hover="opacity:0.9; color:var(--on-accent)">
+        <span style="font-family:var(--font-display); font-size:22px; font-weight:600; letter-spacing:-0.02em">Send an email</span>
+        <span style="font-family:var(--font-mono); font-size:13px; letter-spacing:0.08em; text-transform:uppercase">name@placeholder.com →</span>
+      </a>
+
+    </div>
+  </div>
+  </sc-if>
+
+  <div style="max-width:1240px; width:100%; margin:0 auto; padding:6px 32px 34px; box-sizing:border-box; display:flex; justify-content:space-between; align-items:center; gap:24px; flex-wrap:wrap; font-family:var(--font-mono); font-size:11px; letter-spacing:0.08em; text-transform:uppercase; color:var(--muted)">
+    <div>© 2026 Prathamesh Kadam</div>
+    <div style="display:flex; align-items:center; gap:20px">
+      <a href="#email" style="color:var(--muted)" style-hover="color:var(--accent)">Email</a>
+      <a href="#github" style="color:var(--muted)" style-hover="color:var(--accent)">GitHub</a>
+      <a href="#linkedin" style="color:var(--muted)" style-hover="color:var(--accent)">LinkedIn</a>
+      <div onClick="{{ toTop }}" style="cursor:pointer; color:var(--muted); transition:color 160ms ease" style-hover="color:var(--accent)">Top ↑</div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;defaultTheme&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;default&quot;:&quot;light&quot;,&quot;options&quot;:[&quot;light&quot;,&quot;dark&quot;],&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Theme&quot;},&quot;accentPrimary&quot;:{&quot;editor&quot;:&quot;color&quot;,&quot;default&quot;:&quot;#2B4BF2&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;options&quot;:[&quot;#2B4BF2&quot;,&quot;#111214&quot;,&quot;#F24E2B&quot;,&quot;#1F7A4C&quot;],&quot;section&quot;:&quot;Brand&quot;},&quot;resumeUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#resume&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Content&quot;}}">
+const PROJECTS = [
+  { title: 'Customer churn prediction for a subscription business', kind: 'Classification', year: '2026', figure: 'feature importance chart',
+    summary: 'A model that flags at-risk subscribers before they cancel, giving the retention team a two-week head start.',
+    tags: ['Python', 'Scikit-learn', 'Classification', 'Tableau'] },
+  { title: 'Demand forecasting', kind: 'Time series', year: '2025', figure: 'forecast vs. actual',
+    summary: 'Weekly SKU-level forecasts that replaced a spreadsheet consensus process across four regions.', tags: ['Forecasting', 'Prophet', 'Ops'] },
+  { title: 'Support ticket triage', kind: 'NLP', year: '2025', figure: 'confusion matrix',
+    summary: 'Routes inbound tickets to the right queue on arrival, cutting first-response time by half.', tags: ['NLP', 'PyTorch', 'Classification'] },
+  { title: 'Pricing elasticity study', kind: 'Causal inference', year: '2024', figure: 'elasticity curves',
+    summary: 'Quantifies how far price can move before volume does, per segment, with honest confidence bands.', tags: ['Causal', 'R', 'Pricing'] },
+  { title: 'Data quality monitor', kind: 'Data engineering', year: '2024', figure: 'freshness dashboard',
+    summary: 'Catches silent pipeline failures before a dashboard lies to anyone. Runs on every table that matters.', tags: ['dbt', 'Airflow', 'Tooling'] },
+  { title: 'Segmentation refresh', kind: 'Clustering', year: '2023', figure: 'cluster projection',
+    summary: 'Rebuilt customer segments around behaviour rather than demographics, then made them legible to marketing.', tags: ['Clustering', 'Python', 'Analytics'] }
+];
+
+class Component extends DCLogic {
+  state = { page: 'work', projectIndex: 0, theme: null, now: new Date() };
+
+  componentDidMount() {
+    const saved = (() => { try { return localStorage.getItem('om-portfolio-theme'); } catch (e) { return null; } })();
+    const pref = saved || this.props.defaultTheme || 'light';
+    this.setState({ theme: pref });
+    this.applyTheme(pref);
+    this.applyAccent();
+    this._clock = setInterval(() => this.setState({ now: new Date() }), 30000);
+  }
+
+  componentDidUpdate() { this.applyAccent(); }
+  componentWillUnmount() { if (this._clock) clearInterval(this._clock); }
+
+  applyTheme(theme) {
+    document.documentElement.dataset.theme = theme;
+    try { localStorage.setItem('om-portfolio-theme', theme); } catch (e) {}
+  }
+
+  applyAccent() {
+    const root = document.documentElement;
+    const a = this.props.accentPrimary;
+    if (a) root.style.setProperty('--accent', a); else root.style.removeProperty('--accent');
+  }
+
+  go(page) {
+    this.setState({ page });
+    if (typeof window !== 'undefined') window.scrollTo(0, 0);
+  }
+
+  renderVals() {
+    const { page, projectIndex, theme, now } = this.state;
+    const dark = theme === 'dark';
+    const onWork = page === 'work' || page === 'project';
+    let clock = '';
+    try {
+      clock = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Europe/Dublin' }).format(now);
+    } catch (e) { clock = ''; }
+    const pill = (on) => on ? 'var(--bg)' : 'transparent';
+    const col = (on) => on ? 'var(--ink)' : 'var(--muted)';
+    return {
+      clock,
+      resumeUrl: this.props.resumeUrl ?? '#resume',
+      themeGlyph: dark ? '☀' : '☾',
+      toggleTheme: () => {
+        const next = dark ? 'light' : 'dark';
+        this.applyTheme(next);
+        this.setState({ theme: next });
+      },
+      workPill: pill(onWork), aboutPill: pill(page === 'about'), contactPill: pill(page === 'contact'),
+      workColor: col(onWork), aboutColor: col(page === 'about'), contactColor: col(page === 'contact'),
+      isWork: page === 'work',
+      isProject: page === 'project',
+      isAbout: page === 'about',
+      isContact: page === 'contact',
+      goWork: () => this.go('work'),
+      goAbout: () => this.go('about'),
+      goContact: () => this.go('contact'),
+      toTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+      current: PROJECTS[projectIndex],
+      next: PROJECTS[(projectIndex + 1) % PROJECTS.length],
+      goNext: () => { this.setState({ projectIndex: (projectIndex + 1) % PROJECTS.length }); window.scrollTo(0, 0); },
+      projects: PROJECTS.map((p, i) => ({
+        ...p,
+        index: String(i + 1).padStart(2, '0'),
+        open: () => { this.setState({ page: 'project', projectIndex: i }); window.scrollTo(0, 0); }
+      }))
+    };
+  }
+}
+</script>
+</body>
+</html>

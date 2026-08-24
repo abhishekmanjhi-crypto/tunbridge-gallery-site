@@ -1,0 +1,290 @@
+{
+  "schema": "portfolio-cms-v1",
+  "site": {
+    "name": "Prathamesh Kadam",
+    "role": "Data Scientist",
+    "location": "Galway, Ireland",
+    "shortLocation": "Galway, IE",
+    "coordinates": "53.27°N",
+    "timezone": "Europe/Dublin",
+    "timezoneLabel": "Galway, Ireland · GMT/IST",
+    "accentPrimary": "#2B4BF2",
+    "defaultTheme": "light",
+    "resumeUrl": "#resume",
+    "logoDark": "/assets/logo-black.png",
+    "logoLight": "/assets/logo-white.png",
+    "portrait": "/assets/prathamesh-graduation.jpg",
+    "footerYear": "2026",
+    "footerLinks": [
+      { "label": "Email", "href": "#email" },
+      { "label": "GitHub", "href": "#github" },
+      { "label": "LinkedIn", "href": "#linkedin" }
+    ]
+  },
+  "home": {
+    "eyebrowParts": ["Prathamesh Kadam", "Data Scientist", "Galway, Ireland"],
+    "headlineStart": "I build the models",
+    "headlineMutedA": " that ",
+    "headlineAccent": "decide",
+    "rotatingWords": ["decide", "forecast", "prioritize", "explain", "recommend"],
+    "headlineMutedB": " what a company does next.",
+    "intro": "Three years of churn models, forecasts and pricing work — mostly for teams who need one clear number to act on, not a dashboard of forty.",
+    "skills": ["Python", "SQL", "PyTorch", "Scikit-learn", "dbt", "Snowflake", "Tableau", "Airflow"],
+    "experienceValue": "3 yrs",
+    "experienceLabel": "Experience",
+    "experienceText": "Models in production across subscription, retail and support data.",
+    "statusLabel": "Open to work",
+    "statusText": "Replies in a day or two. Contract or full-time, remote or Galway.",
+    "selectedLabel": "Selected work",
+    "selectedText": "Six projects, each with the tradeoff written down."
+  },
+  "projects": [
+    {
+      "slug": "customer-churn-prediction",
+      "title": "Customer churn prediction for a subscription business",
+      "kind": "Classification",
+      "year": "2026",
+      "figure": "feature importance chart",
+      "summary": "A model that flags at-risk subscribers before they cancel, giving the retention team a two-week head start.",
+      "tags": ["Python", "Scikit-learn", "Classification", "Tableau"],
+      "published": true
+    },
+    {
+      "slug": "demand-forecasting",
+      "title": "Demand forecasting",
+      "kind": "Time series",
+      "year": "2025",
+      "figure": "forecast vs. actual",
+      "summary": "Weekly SKU-level forecasts that replaced a spreadsheet consensus process across four regions.",
+      "tags": ["Forecasting", "Prophet", "Ops"],
+      "published": true
+    },
+    {
+      "slug": "support-ticket-triage",
+      "title": "Support ticket triage",
+      "kind": "NLP",
+      "year": "2025",
+      "figure": "confusion matrix",
+      "summary": "Routes inbound tickets to the right queue on arrival, cutting first-response time by half.",
+      "tags": ["NLP", "PyTorch", "Classification"],
+      "published": true
+    },
+    {
+      "slug": "pricing-elasticity-study",
+      "title": "Pricing elasticity study",
+      "kind": "Causal inference",
+      "year": "2024",
+      "figure": "elasticity curves",
+      "summary": "Quantifies how far price can move before volume does, per segment, with honest confidence bands.",
+      "tags": ["Causal", "R", "Pricing"],
+      "published": true
+    },
+    {
+      "slug": "data-quality-monitor",
+      "title": "Data quality monitor",
+      "kind": "Data engineering",
+      "year": "2024",
+      "figure": "freshness dashboard",
+      "summary": "Catches silent pipeline failures before a dashboard lies to anyone. Runs on every table that matters.",
+      "tags": ["dbt", "Airflow", "Tooling"],
+      "published": true
+    },
+    {
+      "slug": "segmentation-refresh",
+      "title": "Segmentation refresh",
+      "kind": "Clustering",
+      "year": "2023",
+      "figure": "cluster projection",
+      "summary": "Rebuilt customer segments around behaviour rather than demographics, then made them legible to marketing.",
+      "tags": ["Clustering", "Python", "Analytics"],
+      "published": true
+    }
+  ],
+  "caseStudy": {
+    "role": "Sole contributor",
+    "metrics": [
+      { "value": "78%", "label": "Precision at a two-week lead time", "tone": "accent" },
+      { "value": "−14%", "label": "Churn in the piloted segment", "tone": "card" },
+      { "value": "18 mo", "label": "Usage, billing and support history modelled", "tone": "panel" }
+    ],
+    "problem": {
+      "index": "01",
+      "label": "The problem",
+      "lead": "The business was losing roughly 6% of subscribers a month,",
+      "muted": " and nobody knew who until they were already gone.",
+      "paragraphs": [
+        "The retention team had no way to see risk in advance. Outreach was reactive — usually a discount email sent after someone had already asked to cancel, at the point where the decision was made and the conversation was about saving face rather than changing course.",
+        "The goal was narrow and testable: predict churn risk early enough that a retention offer could still plausibly work. Anything arriving after the cancellation request was, for this purpose, worthless."
+      ]
+    },
+    "approach": {
+      "index": "02",
+      "label": "The approach",
+      "steps": [
+        "Pulled and cleaned 18 months of customer usage, billing and support-ticket data.",
+        "Engineered behavioural features — login drop-off, ticket sentiment, plan downgrades, payment failures.",
+        "Tested Logistic Regression, Random Forest and XGBoost; picked XGBoost on the precision–recall tradeoff.",
+        "Handled class imbalance with SMOTE and threshold tuning rather than the default 0.5 cutoff.",
+        "Validated on time-based splits, so no future data was ever used to predict the past."
+      ]
+    },
+    "modelComparison": {
+      "index": "T1",
+      "label": "Model comparison",
+      "rows": [
+        { "model": "Logistic Reg.", "precision": "0.61", "recall": "0.54", "auc": "0.71" },
+        { "model": "Random Forest", "precision": "0.69", "recall": "0.58", "auc": "0.77" },
+        { "model": "XGBoost", "precision": "0.78", "recall": "0.55", "auc": "0.83", "highlight": true }
+      ]
+    },
+    "feature": {
+      "index": "F01",
+      "label": "Feature importance",
+      "figure": "horizontal bar chart — top 8 churn drivers",
+      "note": "Login drop-off and payment failures dominate; demographic attributes contribute almost nothing, which is why they were dropped from the final model."
+    },
+    "tradeoff": {
+      "index": "03",
+      "label": "Key tradeoff",
+      "lead": "Precision over recall,",
+      "muted": " because the two kinds of mistake cost very different amounts.",
+      "paragraphs": [
+        "A false positive costs a discount email to someone who was never going to leave. A false negative costs an entire subscriber. That asymmetry sounds like an argument for recall — but the team had a fixed weekly capacity, and a list padded with low-risk accounts would push genuine risk off the bottom of it.",
+        "So the threshold was tuned for a list the team could actually work through, where most names deserved to be there. Recall was allowed to fall."
+      ]
+    },
+    "mistakeCost": {
+      "index": "T2",
+      "label": "Cost of a mistake",
+      "rows": [
+        { "label": "False positive", "value": "One discount email" },
+        { "label": "False negative", "value": "One subscriber" },
+        { "label": "Binding constraint", "value": "Weekly outreach capacity" }
+      ]
+    },
+    "performance": {
+      "index": "F02",
+      "label": "Model performance",
+      "slides": [
+        { "label": "precision–recall curve", "src": "" },
+        { "label": "confusion matrix", "src": "" }
+      ],
+      "figures": ["precision–recall curve", "confusion matrix"],
+      "note": "Performance at the chosen threshold, with the default 0.5 cutoff shown for comparison."
+    },
+    "results": {
+      "index": "04",
+      "label": "Results",
+      "rows": [
+        { "value": "78%", "label": "Precision on flagged accounts, at a two-week lead time before the cancellation window." },
+        { "value": "−14%", "label": "Churn in the piloted segment over the trial period, where the team ran targeted outreach against the flagged list." },
+        { "value": "Weekly", "label": "A Tableau dashboard the team pulls the risk list from themselves, without asking anyone to write a query." }
+      ]
+    },
+    "differently": {
+      "index": "05",
+      "label": "What I'd do differently",
+      "mutedA": "The weekly batch pipeline sets the floor on lead time. ",
+      "strong": "With more time I'd move the behavioural signals to real time",
+      "mutedB": " — the model can see a login drop-off days before the batch job does, and those days are the whole product."
+    },
+    "handoff": {
+      "index": "F03",
+      "label": "Handoff",
+      "figure": "retention dashboard",
+      "note": "Risk score, the two features driving it, and the account owner — nothing else."
+    }
+  },
+  "about": {
+    "label": "About",
+    "headlineStart": "Three years",
+    "headlineMuted": " of turning messy data into ",
+    "headlineEnd": "decisions people trust.",
+    "paragraphs": [
+      "Prathamesh Kadam is a data scientist based in Galway, Ireland. His work sits between modelling and decision design: building forecasts, churn systems and classification workflows that give teams a clear next action.",
+      "Across subscription, retail, support and pricing data, the pattern is consistent: start with the business tradeoff, build the simplest model that can survive production, then hand it over in a way the operating team can actually use."
+    ],
+    "elsewhereLabel": "Elsewhere",
+    "elsewhere": [
+      { "label": "Currently", "value": "Galway, Ireland" },
+      { "label": "Focus", "value": "Applied ML, analytics, decision systems" },
+      { "label": "Best with", "value": "Messy business data and one sharp question" },
+      { "label": "Output", "value": "Models, dashboards, handoff notes" }
+    ],
+    "experienceLabel": "XP",
+    "experienceTitle": "Experience",
+    "experience": [
+      {
+        "period": "2024 — now",
+        "role": "Data Scientist",
+        "company": "Subscription and retention analytics",
+        "focus": "Built churn-risk workflows that identify at-risk subscribers before cancellation and give retention teams a workable outreach list.",
+        "skills": ["Python", "SQL", "Scikit-learn", "Tableau"],
+        "projects": ["Customer churn prediction", "Data quality monitor"]
+      },
+      {
+        "period": "2022 — 2024",
+        "role": "Forecasting and operations analytics",
+        "company": "Retail and planning teams",
+        "focus": "Replaced spreadsheet-led planning with weekly demand forecasts, model checks and readable performance reporting.",
+        "skills": ["Forecasting", "Prophet", "dbt", "Snowflake"],
+        "projects": ["Demand forecasting", "Segmentation refresh"]
+      },
+      {
+        "period": "2020 — 2022",
+        "role": "Applied ML contributor",
+        "company": "Support, pricing and customer data systems",
+        "focus": "Shipped classification and causal-analysis work for routing, pricing and customer understanding, with emphasis on error costs and adoption.",
+        "skills": ["NLP", "PyTorch", "R", "Analytics"],
+        "projects": ["Support ticket triage", "Pricing elasticity study"]
+      }
+    ],
+    "principles": [
+      { "title": "Models with a decision attached", "body": "Every score needs an owner, a threshold and a clear action. Otherwise it is just another number on a dashboard." },
+      { "title": "Tradeoffs before tuning", "body": "Precision, recall, cost and capacity get written down before the modelling work starts, so the final threshold is defensible." },
+      { "title": "Handoff is the deliverable", "body": "The model is only finished when the team can read it, trust it and use it without asking for a query." }
+    ],
+    "toolkitLabel": "Toolkit",
+    "toolkit": ["Python", "SQL", "PyTorch", "Scikit-learn", "dbt", "Snowflake", "Tableau", "Airflow"],
+    "ctaLabel": "Get in touch",
+    "ctaText": "Email is best. I answer within a day or two.",
+    "contactLabel": "Contact me",
+    "platformLinks": [
+      { "label": "Email", "href": "#email", "text": "Email" },
+      { "label": "LinkedIn", "href": "#linkedin", "text": "LinkedIn" },
+      { "label": "GitHub", "href": "#github", "text": "GitHub" },
+      { "label": "Resume", "href": "#resume", "text": "Résumé" }
+    ],
+    "recommendation": {
+      "visible": false,
+      "index": "R01",
+      "label": "Recommendation",
+      "quote": "Prathamesh is the kind of data scientist who keeps pushing until the model is useful to the team, not just impressive in a notebook.",
+      "author": "Name withheld",
+      "title": "Manager / collaborator"
+    }
+  },
+  "contact": {
+    "statusLabel": "Open to work",
+    "headlineStart": "Email is best.",
+    "headlineMuted": " I answer within a day or two.",
+    "intro": "A one-paragraph description of the problem is enough to start — no brief required.",
+    "localTimeLabel": "Local time",
+    "directLabel": "Direct",
+    "direct": [
+      { "label": "Email", "text": "name@placeholder.com", "href": "#email" },
+      { "label": "LinkedIn", "text": "/in/placeholder", "href": "#linkedin" },
+      { "label": "GitHub", "text": "@placeholder", "href": "#github" },
+      { "label": "Résumé", "text": "PDF, one page ↓", "href": "#resume" }
+    ],
+    "fitLabel": "Good fit",
+    "fit": [
+      { "label": "Best for", "value": "Modelling with a decision attached" },
+      { "label": "Availability", "value": "Select engagements, from Q4" },
+      { "label": "Basis", "value": "Contract or full-time" }
+    ],
+    "ctaText": "Send an email",
+    "ctaMeta": "name@placeholder.com →",
+    "ctaHref": "#email"
+  }
+}

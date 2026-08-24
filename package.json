@@ -1,0 +1,13 @@
+{
+  "name": "tunbridge-gallery-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio Site.dc.html deployment with a custom CMS.",
+  "scripts": {
+    "check": "node --check app.js && node --check api/content.js"
+  },
+  "dependencies": {
+    "mongodb": "^6.12.0"
+  },
+  "devDependencies": {}
+}
